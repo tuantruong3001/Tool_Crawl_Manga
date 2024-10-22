@@ -1,0 +1,20 @@
+name: CICD-pipeline
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Merge feature branch to master
+      run: |
+        git checkout master
+        git merge ${{ github.head_ref }}
+        git push origin master
+

@@ -16,5 +16,6 @@ pip install requests
 #Run
 
 ```
-python .\railgun.py
+python .\app_GUI.py
 ```
+
